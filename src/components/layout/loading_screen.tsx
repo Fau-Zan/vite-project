@@ -1,9 +1,8 @@
 import { motion } from "framer-motion";
-import React from "react"
-
+import React from "react";
 
 const LoadingScreen = () => {
-   return (
+  return (
     <motion.div
       style={{
         display: "flex",
@@ -17,7 +16,7 @@ const LoadingScreen = () => {
           height: 70,
           padding: "7px",
           margin: "17vh",
-          border:"1px solid #000",
+          border: "1px solid #000",
           borderRadius: "50%",
           borderTopColor: "transparent",
           backgroundColor: "transparent",
@@ -31,7 +30,7 @@ const LoadingScreen = () => {
           position: "absolute",
           width: 55,
           height: 55,
-          border:"1px solid #000",
+          border: "1px solid #000",
           borderRadius: "50%",
           borderTopColor: "transparent",
           backgroundColor: "transparent",
