@@ -2,12 +2,10 @@ import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } 
 import Layout from "./pages/layout";
 
 function App(): JSX.Element {
-  const routes = [
-    <Route key="main" path="/" element={<Layout />} />
-  ];
+  const routes = [<Route key="main" path="/" element={<Layout />} />];
   const route = createBrowserRouter(createRoutesFromElements(routes));
   return (
-    <div className="App">
+    <div>
       <RouterProvider router={route} />
     </div>
   );
