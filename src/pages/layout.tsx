@@ -3,8 +3,16 @@ import Velotext from "../components/layout/velotext";
 import Particle from "../components/layout/particle";
 import particleConfigs from "../config/particle.config";
 import LoadingScreen from "../components/layout/loading_screen";
+import { useEffect } from "react";
 
 const Layout = () => {
+  useEffect(() => {
+    const redirectTimer = setTimeout(() => {
+      window.location.href = "/home";
+    }, 8000);
+    return () => clearTimeout(redirectTimer);
+  }, []);
+
   return (
     <div className="flex relative items-center justify-center px-6 py-[30%] md:py-[15%] text-[21px] md:text-[36px]">
       <Particle options={particleConfigs} />

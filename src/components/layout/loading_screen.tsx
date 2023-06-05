@@ -1,8 +1,13 @@
 import { motion } from "framer-motion";
-import React from "react";
+import useDeviceDetect from "../../hooks/get_device";
 
 const LoadingScreen = () => {
-  return (
+    const { device } = useDeviceDetect()
+    let loading_size: string = device == "Mobile" ? "70" : device == "Desktop" ? "90" : "80"
+    const loading_size2 = String(parseInt(loading_size) - 15) + "px"
+    loading_size = loading_size + "px"
+    
+   return (
     <motion.div
       style={{
         display: "flex",
@@ -12,11 +17,11 @@ const LoadingScreen = () => {
     >
       <motion.div
         style={{
-          width: 70,
-          height: 70,
+          width: loading_size,
+          height: loading_size,
           padding: "7px",
           margin: "17vh",
-          border: "1px solid #000",
+          border:"1px solid #000",
           borderRadius: "50%",
           borderTopColor: "transparent",
           backgroundColor: "transparent",
@@ -28,9 +33,9 @@ const LoadingScreen = () => {
       <motion.div
         style={{
           position: "absolute",
-          width: 55,
-          height: 55,
-          border: "1px solid #000",
+          width: loading_size2,
+          height: loading_size2,
+          border:"1px solid #000",
           borderRadius: "50%",
           borderTopColor: "transparent",
           backgroundColor: "transparent",
