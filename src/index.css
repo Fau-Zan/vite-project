@@ -2,3 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 @tailwind variants;
+
+@font-face {
+    font-family: Regular;
+    src: local("Minecraft"),
+    url("assets/font/Minecraft.ttf") format("truetype");
+}

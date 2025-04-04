@@ -13,7 +13,6 @@ const useDeviceDetect = () => {
       setDevice("Desktop");
     }
   }, []);
-
   return { device };
 };
 
