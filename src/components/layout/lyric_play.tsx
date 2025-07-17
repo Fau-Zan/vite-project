@@ -1,10 +1,18 @@
 import { useEffect, useState } from 'react';
 
+const colorMap: Record<string, string> = {
+  red: 'text-red-500',
+  blue: 'text-blue-500',
+  green: 'text-green-500',
+  yellow: 'text-yellow-500',
+  white: 'text-white',
+};
 interface TypingEffectProps {
   text: string;
   speed?: number;
   startAt?: number;
   clearAfter?: number;
+  color?: keyof typeof colorMap
 }
 
 const TypingEffect = ({
@@ -12,6 +20,7 @@ const TypingEffect = ({
   speed = 0.1,
   startAt = 0,
   clearAfter = 1,
+  color = "white"
 }: TypingEffectProps): JSX.Element => {
   const [displayedText, setDisplayedText] = useState('');
 
@@ -48,7 +57,7 @@ const TypingEffect = ({
 
   return (
     <div className="absolute text-center">
-      <div className="text-white text-[30px] font-minecraft">{displayedText}</div>
+      <div className={`${colorMap[color] ?? 'text-white'} text-[30px] font-minecraft`}>{displayedText}</div>
     </div>
   );
 };
